@@ -1,0 +1,57 @@
+Scenario 1: A company needs to secure its online transactions. Describe how you would implement HTTPS and TLS to achieve this.
+
+1. Obtain a valid CA-signed SSL/TLS certificate.
+   - Use a trusted Certificate Authority (DigiCert, GlobalSign, Let's Encrypt).
+
+2. Configure the server for modern TLS.
+   - Enable only TLS 1.2 and TLS 1.3.
+   - Disable SSLv2, SSLv3, TLS 1.0, and TLS 1.1.
+   - Use strong cipher suites (AES-256-GCM, ChaCha20-Poly1305).
+
+3. Enable Perfect Forward Secrecy (PFS).
+   - Use ECDHE for key exchange.
+
+4. Redirect all HTTP traffic to HTTPS.
+   - Enable HSTS to prevent downgrade attacks.
+
+5. Secure key management.
+   - Protect the private key with strict permissions.
+   - Rotate keys and certificates when needed.
+
+6. Enable certificate lifecycle management.
+   - Monitor expiration dates.
+   - Revoke or replace compromised certificates.
+
+7. Test the configuration using SSL Labs or similar tools.
+   - Ensure an A or A+ grade.
+
+
+Scenario 2: How would you identify and mitigate SSL/TLS vulnerabilities in a web application?
+
+Identification:
+1. Use TLS scanning tools:
+   - SSL Labs Server Test
+   - Nmap (ssl-enum-ciphers)
+   - OpenSSL tests
+   - Nessus or OpenVAS
+
+2. Look for:
+   - Weak protocols (SSL, TLS 1.0)
+   - Weak ciphers (RC4, 3DES)
+   - Certificate problems (expired, self-signed, wrong hostname)
+   - Missing HSTS
+   - Lack of PFS
+   - Known vulnerabilities (Heartbleed, POODLE, BEAST, ROBOT)
+
+Mitigation:
+1. Disable weak protocols: SSLv2, SSLv3, TLS 1.0, TLS 1.1.
+2. Remove weak cipher suites: RC4, DES/3DES, export-grade ciphers.
+3. Enable modern secure ciphers: AES-GCM, ChaCha20, ECDHE.
+4. Fix certificate issues:
+   - Ensure valid CA-signed certificates
+   - Correct domain names
+   - Include intermediate certificates
+5. Enable HSTS and OCSP stapling.
+6. Ensure Perfect Forward Secrecy (ECDHE).
+7. Update TLS libraries (OpenSSL, nginx, Apache).
+8. Continuously monitor with automated TLS scans.
