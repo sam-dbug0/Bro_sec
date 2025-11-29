@@ -1,3 +1,95 @@
+1. Cryptography Principles
+
+Cryptography is the practice of securing information by transforming it to prevent unauthorized access.
+
+Key Principles:
+1. Confidentiality – prevents unauthorized access to data (encryption).
+2. Integrity – ensures data is not altered (hashing, signatures).
+3. Authentication – verifies the identity of users/systems.
+4. Non-repudiation – prevents denial of actions (digital signatures, logs).
+
+
+2. Types of Encryption
+
+1. Symmetric Encryption
+   - Same key used for encryption and decryption.
+   - Fast and efficient.
+   - Used for bulk data encryption.
+   Examples: AES, ChaCha20.
+
+2. Asymmetric Encryption
+   - Uses public key (encrypt) and private key (decrypt).
+   - Slower but provides secure key exchange and authentication.
+   Examples: RSA, ECC.
+
+
+3. Symmetric vs Asymmetric Encryption
+
+Symmetric:
+  - One shared key.
+  - Very fast.
+  - Used for: VPNs, file encryption, TLS session data (after handshake).
+
+Asymmetric:
+  - Public/private key pair.
+  - Slower but more secure for authentication and key exchange.
+  - Used for: digital signatures, certificates, TLS handshake.
+
+
+4. Digital Signatures
+
+Digital signatures provide:
+  - Authentication
+  - Integrity
+  - Non-repudiation
+
+How they work:
+1. Sender hashes the message.
+2. Sender encrypts the hash with their private key → signature.
+3. Receiver decrypts signature with sender’s public key.
+4. Receiver hashes the message.
+5. If both hashes match → signature is valid.
+
+
+5. HTTPS and TLS Handshake
+
+HTTPS = HTTP over TLS.
+
+Provides:
+  - Encryption
+  - Authentication (via certificates)
+  - Integrity
+
+TLS Handshake (simplified):
+1. Client Hello – browser sends supported protocols and ciphers.
+2. Server Hello – server sends certificate and chosen cipher suite.
+3. Certificate Verification – client verifies certificate with CA chain.
+4. Key Exchange – client and server securely generate session key (RSA or ECDHE).
+5. Session Key Established – symmetric encryption begins (AES or ChaCha20).
+6. Encrypted Data Exchange – all communication is now secure.
+
+
+6. SSL/TLS Vulnerabilities
+
+Common issues:
+  - OLD protocols: SSLv2, SSLv3, TLS 1.0, TLS 1.1
+  - Weak ciphers: RC4, DES, 3DES, export-grade ciphers
+  - Weak keys: RSA < 2048 bits
+  - Invalid/expired certificates
+  - Missing HSTS
+  - No Perfect Forward Secrecy (PFS)
+  - Known attacks: Heartbleed, POODLE, BEAST, CRIME, ROBOT, Logjam
+
+
+
+
+
+
+
+
+
+
+
 Scenario 1: A company needs to secure its online transactions. Describe how you would implement HTTPS and TLS to achieve this.
 
 1. Obtain a valid CA-signed SSL/TLS certificate.
