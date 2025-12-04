@@ -1,49 +1,48 @@
-Simple Version: Using a VPN to Secure Remote Access
+Using a VPN to Secure Remote Access (Simple Version)
+1. Choose a Strong VPN
 
-Choose a Strong VPN
+Use trusted VPN technologies like IPsec or OpenVPN.
 
-Use a trusted, secure VPN system like IPsec or OpenVPN.
+2. Use Strong Encryption
 
-Use Strong Encryption
-
-Protect data with strong encryption (like AES-256).
+Encrypt data using AES-256.
 
 Use secure keys and modern TLS versions.
 
-Require Strong Login Security
+3. Require Strong Login Security
 
-Use multi-factor authentication (MFA).
+Enforce multi-factor authentication (MFA).
 
-Make sure every employee has their own login.
+Make sure each employee has a unique login.
 
-Allow Only Safe Devices
+4. Allow Only Safe Devices
 
-Only let devices connect if they are updated and secure.
+Only allow devices that are updated and secure.
 
-Check for latest patches and antivirus.
+Check for latest OS patches and antivirus software.
 
-Limit What Users Can Access
+5. Limit What Users Can Access
 
-Give employees access only to what they need.
+Provide access only to necessary resources.
 
-Block direct access to sensitive servers.
+Block direct access to sensitive internal servers.
 
-Monitor and Log Activity
+6. Monitor and Log Activity
 
 Record all login attempts.
 
-Watch for unusual behavior (odd locations, late-night logins, big data transfers).
+Watch for unusual behavior (example: new locations, late-night logins, large transfers).
 
-Send All Traffic Through the VPN
+7. Send All Traffic Through the VPN
 
-Use full-tunnel mode so everything goes through the secure connection.
+Use full-tunnel mode so all internet traffic goes through the VPN.
 
-Keep VPN Software Updated
+8. Keep VPN Software Updated
 
-Install updates and security patches.
+Install security patches and updates regularly.
 
-Refresh keys and certificates regularly.
+Refresh keys and certificates on schedule.
 
-Check for VPN Leaks
+9. Check for VPN Leaks
 
-Make sure no IP, DNS, or data leaks happen outside the VPN.
+Make sure there are no IP leaks, DNS leaks, or traffic leaks outside the tunnel.
