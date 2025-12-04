@@ -46,3 +46,30 @@ Refresh keys and certificates on schedule.
 9. Check for VPN Leaks
 
 Make sure there are no IP leaks, DNS leaks, or traffic leaks outside the tunnel.
+
+
+
+
+
+Scenario 1: Securing a Company’s Sensitive Data (CIA Triad)
+1. Ensuring Confidentiality
+- Use strong, unique passwords for all accounts.
+- Implement Multi-Factor Authentication (MFA) on all critical systems.
+- Encrypt all data:
+* At rest: AES-256
+* In transit: TLS 1.3
+- Enforce the Principle of Least Privilege using RBAC.
+- Deploy Data Loss Prevention (DLP) tools to prevent unauthorized data movement.
+- Implement network segmentation (e.g., separate VLANs for Finance, HR, Development).
+2. Ensuring Integrity
+- Use File Integrity Monitoring tools (Tripwire, OSSEC).
+- Maintain version control and apply formal change-control processes.
+- Apply digital signatures to critical or sensitive documents.
+- Use checksums and hashing (e.g., SHA-256) for backups and file validation.
+- Implement audit logs with tamper protection and secure storage.
+3. Ensuring Availability
+- Create regular backups with off-site and cloud storage options.
+- Use redundant systems (RAID arrays, load balancers, failover servers).
+- Establish Disaster Recovery (DR) and Business Continuity Plans (BCP).
+- Use UPS/generators for power redundancy during outages.
+- Deploy firewalls, IDS/IPS, and DDoS protection to maintain service uptime.
